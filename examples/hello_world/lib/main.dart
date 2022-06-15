@@ -1,16 +1,38 @@
-// Copyright 2014 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 
-import 'package:flutter/widgets.dart';
+import './first_screen.dart';
+import './logínScreen.dart';
+import './second_screen.dart';
+import './tabHomsScreen.dart';
 
-void main() =>
-  runApp(
-    const Center(
-      child:
-        Text('Hello, world!',
-          key: Key('title'),
-          textDirection: TextDirection.ltr,
-        ),
+// void main() => runApp(MyApp());
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Navigation Demo App',
+      debugShowCheckedModeBanner: true,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: const TabHomeScreen(),
+      routes: {
+        LoginScreen.routeName: (ctx) => const LoginScreen(),
+        TabHomeScreen.routeName: (ctx) => const TabHomeScreen(),
+        FirstScreen.routeName: (ctx) => const FirstScreen(),
+        SecondScreen.routeName: (ctx) => const SecondScreen(),
+      },
     );
+  }
+}
