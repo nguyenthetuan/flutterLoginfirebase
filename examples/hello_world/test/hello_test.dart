@@ -7,9 +7,10 @@ import 'package:hello_world/main.dart' as hello_world;
 
 void main() {
   testWidgets('Hello world smoke test', (WidgetTester tester) async {
-    hello_world.main(); // builds the app and schedules a frame but doesn't trigger one
+    hello_world
+        // ignore: avoid_dynamic_calls
+        .main(); // builds the app and schedules a frame but doesn't trigger one
     await tester.pump(); // triggers a frame
-
     expect(find.text('Hello, world!'), findsOneWidget);
   });
 }
