@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176297558181",
+    "project_id": "midstream-mobile",
+    "storage_bucket": "midstream-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176297558181:android:1622d6e1590071ea3ecd4c",
+        "android_client_info": {
+          "package_name": "io.flutter.examples.hello_world"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176297558181-si20pvhcj8sq7r7oufnjmod53anujt53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH3oGCBwMmJEAAnNMX-Uemjngn4LgTNRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176297558181-si20pvhcj8sq7r7oufnjmod53anujt53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
