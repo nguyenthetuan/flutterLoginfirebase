@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'Animation/FadeAnimation.dart';
 
@@ -18,18 +20,16 @@ class _LoginScreenState extends State<LoginScreen> {
   String passWord = '';
 
   // ignore: always_specify_types
-  void changeUserName(value) {
+  void changeUserName(String value) {
     setState(() {
       userName = value;
     });
-    print('$userName')
   }
 
-  void changePassword(value) {
+  void changePassword(String value) {
     setState(() {
       passWord = value;
     });
-     print('$passWord')
   }
 
   @override
