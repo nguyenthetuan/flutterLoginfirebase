@@ -1,11 +1,36 @@
 import 'package:flutter/material.dart';
-
 import 'Animation/FadeAnimation.dart';
 
-class LoginScreen extends StatelessWidget {
+void main() {
+  runApp(LoginScreen());
+}
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
   static const String routeName = '/login-screen';
-  void changeUser() {}
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  String userName = '';
+  String passWord = '';
+
+  // ignore: always_specify_types
+  void changeUserName(value) {
+    setState(() {
+      userName = value;
+    });
+    print('$userName')
+  }
+
+  void changePassword(value) {
+    setState(() {
+      passWord = value;
+    });
+     print('$passWord')
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                                       hintText: "Email or Phone number",
                                       hintStyle:
                                           TextStyle(color: Colors.grey[400])),
-                                  onChanged: (String value) => print('$value'),
+                                  onChanged: changeUserName,
                                 ),
                               ),
                               Container(
@@ -124,6 +149,7 @@ class LoginScreen extends StatelessWidget {
                                       hintText: "Password",
                                       hintStyle:
                                           TextStyle(color: Colors.grey[400])),
+                                  onChanged: changePassword,
                                 ),
                               )
                             ],

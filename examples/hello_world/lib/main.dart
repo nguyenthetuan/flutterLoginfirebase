@@ -1,20 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import './first_screen.dart';
-import './logínScreen.dart';
+import './loginScreen.dart';
 import './second_screen.dart';
 import './tabHomsScreen.dart';
 
-// void main() => runApp(MyApp());
-
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const TabHomeScreen(),
+      home: const LoginScreen(),
       routes: {
         LoginScreen.routeName: (ctx) => const LoginScreen(),
         TabHomeScreen.routeName: (ctx) => const TabHomeScreen(),
